@@ -89,7 +89,7 @@ class PengirimanService {
     Pengiriman? p = antrean.dequeue();
 
     if (p == null) {
-      print("Tidak ada antrean untuk diproses.");
+      print("Tidak ada antrean.");
       return;
     }
 
@@ -97,7 +97,11 @@ class PengirimanService {
 
     simpanCSV();
 
-    print("Pengiriman dengan ID ${p.id} sedang diproses.");
+    print("ID Pengiriman : ${p.id}");
+    print("Komoditas     : ${p.komoditas.nama}");
+    print("Tujuan        : ${p.tujuan}");
+    print("Status Baru   : ${p.status.name}");
+    print("Sisa Antrean  : ${antrean.size()}");
   }
 
   void inputPengirimanBaru() {
