@@ -1,18 +1,8 @@
-import '../nodes/stack_node.dart';
-
 class Stack<T> {
-  StackNode<T>? top;
+  List<T> data = [];
 
-  bool isEmpty() {
-    return top == null;
-  }
-
-  void push(T data) {
-    StackNode<T> newNode = StackNode(data);
-
-    newNode.next = top;
-
-    top = newNode;
+  void push(T item) {
+    data.add(item);
   }
 
   T? pop() {
@@ -20,10 +10,14 @@ class Stack<T> {
       return null;
     }
 
-    T data = top!.data;
+    return data.removeLast();
+  }
 
-    top = top!.next;
+  bool isEmpty() {
+    return data.isEmpty;
+  }
 
-    return data;
+  int size() {
+    return data.length;
   }
 }

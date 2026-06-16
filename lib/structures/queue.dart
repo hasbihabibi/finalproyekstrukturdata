@@ -1,23 +1,8 @@
-import '../nodes/queue_node.dart';
-
 class Queue<T> {
-  QueueNode<T>? front;
-  QueueNode<T>? rear;
+  List<T> data = [];
 
-  bool isEmpty() {
-    return front == null;
-  }
-
-  void enqueue(T data) {
-    QueueNode<T> newNode = QueueNode(data);
-
-    if (isEmpty()) {
-      front = newNode;
-      rear = newNode;
-    } else {
-      rear!.next = newNode;
-      rear = newNode;
-    }
+  void enqueue(T item) {
+    data.add(item);
   }
 
   T? dequeue() {
@@ -25,14 +10,14 @@ class Queue<T> {
       return null;
     }
 
-    T data = front!.data;
+    return data.removeAt(0);
+  }
 
-    front = front!.next;
+  bool isEmpty() {
+    return data.isEmpty;
+  }
 
-    if (front == null) {
-      rear = null;
-    }
-
-    return data;
+  int size() {
+    return data.length;
   }
 }
