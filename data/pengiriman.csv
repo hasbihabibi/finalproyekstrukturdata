@@ -1,6 +1,6 @@
 id,komoditas,grade,berat,tujuan,status
 1001,Jagung,A,500.0,Banyuwangi,diproses
-1002,Beras,B,300.0,Jember,menunggu
+1002,Beras,B,300.0,Jember,diproses
 1003,Tomat,A,200.0,Malang,dikirim
 1004,Beras,A,450.0,Surabaya,selesai
 1005,Tomat,B,150.0,Kediri,diproses
